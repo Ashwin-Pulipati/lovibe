@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Quicksand, Dancing_Script, Pacifico } from "next/font/google";
 import { ThemeProvider as NextJSThemeProvider } from "next-themes";
 import "./globals.css";
+import { Toaster } from "sonner";
+import { TRPCReactProvider } from "@/trpc/client";
 
 const quickSand = Quicksand({
   variable: "--font-quicksand",
@@ -34,18 +36,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body
-        className={`${quickSand.variable} ${dancingScript.variable} ${pacifico.variable} antialiased`}
-      >
-        <NextJSThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
+    <TRPCReactProvider>
+      <html lang="en" suppressHydrationWarning={true}>
+        <body
+          className={`${quickSand.variable} ${dancingScript.variable} ${pacifico.variable} antialiased`}
         >
-          {children}
-        </NextJSThemeProvider>
-      </body>
-    </html>
+          <NextJSThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+          >
+            <Toaster />
+            {children}
+          </NextJSThemeProvider>
+        </body>
+      </html>
+    </TRPCReactProvider>
   );
 }
