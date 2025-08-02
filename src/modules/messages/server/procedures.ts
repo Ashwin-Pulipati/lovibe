@@ -6,21 +6,31 @@ import z from "zod";
 const prisma = new PrismaClient();
 
 export const messageRouter = createTRPCRouter({
-    getMany: baseProcedure.query(async () => {
-        const messages = await prisma.message.findMany({
-          orderBy: {
-            updatedAt: "desc",
-            },
-            // include: {
-            //     fragment: true,
-            // }
-        })  
-        return messages
+  getMany: baseProcedure
+    .input(
+      z.object({
+        projectId: z.string().min(1, { message: "Project ID is required" }),
+      })
+    )
+    .query(async ({input }) => {
+      const messages = await prisma.message.findMany({
+        where: {
+          projectId: input.projectId,
+        },
+        include: {
+            fragment: true,
+        },
+        orderBy: {
+          updatedAt: "asc",
+        },
+      });
+      return messages;
     }),
   create: baseProcedure
     .input(
       z.object({
-        value: z.string()
+        value: z
+          .string()
           .min(1, { message: "Value is required" })
           .max(10000, { message: "Value is too long" }),
         projectId: z.string().min(1, { message: "Project ID is required" }),
@@ -35,13 +45,13 @@ export const messageRouter = createTRPCRouter({
           type: "RESULT",
         },
       });
-        await inngest.send({
-          name: "code-agent/run",
-          data: {
-            value: input.value,
-            projectId: input.projectId
-          },
-        });
-        return createdMessage;
+      await inngest.send({
+        name: "code-agent/run",
+        data: {
+          value: input.value,
+          projectId: input.projectId,
+        },
+      });
+      return createdMessage;
     }),
 });
