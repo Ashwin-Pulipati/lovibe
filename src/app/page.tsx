@@ -6,6 +6,11 @@ import { useTRPC } from "@/trpc/client";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
 
+/**
+ * Renders the home page UI for submitting a message and displaying a list of messages.
+ *
+ * Provides an input field for entering a message, a button to submit the message as a background job, and displays the current list of messages in JSON format.
+ */
 export default function Home() {
   const [value, setValue] = useState("");
   const trpc = useTRPC();
