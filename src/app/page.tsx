@@ -7,6 +7,11 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
+/**
+ * Renders the home page UI for creating a new project.
+ *
+ * Displays an input field for the project name and a submit button. On submission, creates a new project via a backend mutation and navigates to the project's page upon success.
+ */
 export default function Home() {
   const router = useRouter()
   const [value, setValue] = useState("");
