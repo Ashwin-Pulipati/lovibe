@@ -7,12 +7,20 @@ import {
   createAgent,
   createTool,
   createNetwork,
+  type Tool,
 } from "@inngest/agent-kit";
 import { PROMPT } from "./prompt";
+import { PrismaClient } from "@/generated/prisma";
 
-export const helloWorld = inngest.createFunction(
-  { id: "hello-world" },
-  { event: "test/hello.world" },
+interface AgenTState {
+  summary: string;
+  files: {[path: string]: string};
+}
+
+
+export const codingAgentFunction = inngest.createFunction(
+  { id: "code-agent" },
+  { event: "code-agent/run" },
   async ({ event, step }) => {
 
     const sandboxId = await step.run("get-sandbox-id", async () => {
@@ -26,19 +34,22 @@ export const helloWorld = inngest.createFunction(
       return `https://${host}`;
     });
 
-    const codeAgent = createAgent({
+    
+    const codeAgent = createAgent<AgenTState>({
       name: "code-agent",
       description: "An expert coding agent",
       system: PROMPT,
-      model: openai({ model: "gpt-4.1", defaultParameters: { temperature: 0.1 } }),
+      model: openai({
+        model: "gpt-4.1",
+        defaultParameters: { temperature: 0.1 },
+      }),
       tools: [
         createTool({
           name: "terminal",
           description: "Use the terminal to run commands",
-          parameters:
-            z.object({
-              command: z.string()
-            }),
+          parameters: z.object({
+            command: z.string(),
+          }),
           handler: async ({ command }, { step }) => {
             return await step?.run("terminal", async () => {
               const buffers = { stdout: "", stderr: "" };
@@ -74,7 +85,7 @@ export const helloWorld = inngest.createFunction(
               })
             ),
           }),
-          handler: async ({ files }, { step, network }) => {
+          handler: async ({ files }, { step, network }: Tool.Options<AgenTState>) => {
             const newFiles = await step?.run(
               "createOrUpdateFiles",
               async () => {
@@ -135,7 +146,7 @@ export const helloWorld = inngest.createFunction(
       },
     });
 
-    const network = createNetwork({
+    const network = createNetwork<AgenTState>({
       name: "coding-agent-network",
       agents: [codeAgent],
       maxIter: 15,
@@ -151,6 +162,36 @@ export const helloWorld = inngest.createFunction(
     });
 
     const result = await network.run(event.data.value);
+
+    const isError = !result.state.data.summary || 
+      Object.keys(result.state.data.files || {}).length===0
+
+    await step.run("save-result", async () => {
+      const prisma = new PrismaClient();
+      if (isError) {
+        return await prisma.message.create({
+          data: {
+            content: "Something went wrong. Please try again.",
+            role: "ASSISTANT",
+            type: "ERROR",
+          },
+        });
+      }
+        return await prisma.message.create({
+          data: {
+            content: result.state.data.summary,
+            role: "ASSISTANT",
+            type: "RESULT",
+            fragment: {
+              create: {
+                sandboxUrl: sandboxUrl,
+                title: "Fragment",
+                files: result.state.data.files,
+              },
+            },
+          },
+        });
+    });
 
     return {
       url: sandboxUrl,
