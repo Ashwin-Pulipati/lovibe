@@ -7,6 +7,11 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
+/**
+ * Renders the home page with a centered form for creating a new project.
+ *
+ * Displays an input field and a submit button. When the form is submitted, a new project is created via a TRPC mutation. On success, the user is redirected to the new project's page; on error, an error toast is shown.
+ */
 export default function Home() {
   const router = useRouter()
   const [value, setValue] = useState("");
