@@ -10,6 +10,14 @@ import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbList, Breadcr
 
 type FileCollection = { [ path: string ]: string }
 
+/**
+ * Returns the file extension in lowercase to indicate the language or file type.
+ *
+ * If the filename has no extension, returns "text".
+ *
+ * @param filename - The name of the file to analyze
+ * @returns The file extension in lowercase, or "text" if none is found
+ */
 function getLanguageFromExtension(filename: string): string {
     const extension = filename.split(".").pop()?.toLowerCase();
     return  extension || "text";
