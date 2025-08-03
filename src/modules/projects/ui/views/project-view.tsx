@@ -4,6 +4,7 @@ import { MessagesContainer } from "../components/messages-container";
 import { Suspense, useState } from "react";
 import { Fragment } from "@/generated/prisma";
 import { ErrorBoundary } from "react-error-boundary";
+import { ProjectHeader } from "../components/project-header";
 
 
 interface ProjectViewProps {
@@ -21,6 +22,9 @@ export const ProjectView = ({ projectId }: ProjectViewProps) => {
             minSize={20}
             className="flex flex-col min-h-0"
           >
+            <Suspense fallback={<div>Loading...</div>}>
+              <ProjectHeader projectId={projectId} />
+            </Suspense>
             <Suspense fallback={<div>Loading...</div>}>
               <ErrorBoundary
                 fallback={
