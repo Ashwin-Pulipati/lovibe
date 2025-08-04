@@ -7,7 +7,6 @@ import {
 import { MessagesContainer } from "../components/messages-container";
 import { Suspense, useState } from "react";
 import { Fragment } from "@/generated/prisma";
-import { ErrorBoundary } from "react-error-boundary";
 import { ProjectHeader } from "../components/project-header";
 import { FragmentWeb } from "../components/fragment-web";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
@@ -15,6 +14,7 @@ import { CodeIcon, CrownIcon, EyeIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FileExplorer } from "@/components/file-explorer";
+import { UserControl } from "@/components/user-control";
 
 interface ProjectViewProps {
   projectId: string;
@@ -36,15 +36,11 @@ export const ProjectView = ({ projectId }: ProjectViewProps) => {
             <ProjectHeader projectId={projectId} />
           </Suspense>
           <Suspense fallback={<div>Loading...</div>}>
-            <ErrorBoundary
-              fallback={<div>Something went wrong while loading messages.</div>}
-            >
-              <MessagesContainer
-                projectId={projectId}
-                activeFragment={activeFragment}
-                setActiveFragment={setActiveFragment}
-              />
-            </ErrorBoundary>
+            <MessagesContainer
+              projectId={projectId}
+              activeFragment={activeFragment}
+              setActiveFragment={setActiveFragment}
+            />
           </Suspense>
         </ResizablePanel>
         <ResizableHandle className="hover:bg-primary transition-colors" />
@@ -74,11 +70,12 @@ export const ProjectView = ({ projectId }: ProjectViewProps) => {
               </TabsList>
               <div className="ml-auto flex items-center gap-x-2">
                 <Button asChild size="sm" variant="tertiary">
-                  <Link href="/pricing">
+                  <Link href="/pricing" className="flex items-center">
                     <CrownIcon className="w-4 h-4 mr-2" />
                     Upgrade
                   </Link>
                 </Button>
+                <UserControl />
               </div>
             </div>
             <TabsContent value="preview" className="flex-1 min-h-0">
