@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FileExplorer } from "@/components/file-explorer";
 import { UserControl } from "@/components/user-control";
+import { useAuth } from "@clerk/nextjs";
 
 interface ProjectViewProps {
   projectId: string;
@@ -23,7 +24,9 @@ interface ProjectViewProps {
 export const ProjectView = ({ projectId }: ProjectViewProps) => {
   const [activeFragment, setActiveFragment] = useState<Fragment | null>(null);
   const [tabState, setTabState] = useState<"preview" | "code">("preview");
-
+const { has } = useAuth();
+  const hasProAccess = has?.({ plan: "pro" });
+  const hasFreeAccess = has?.({ plan: "free_user" });
   return (
     <div className="h-screen">
       <ResizablePanelGroup direction="horizontal">
@@ -69,13 +72,15 @@ export const ProjectView = ({ projectId }: ProjectViewProps) => {
                 </TabsTrigger>
               </TabsList>
               <div className="ml-auto flex items-center gap-x-2">
-                <Button asChild size="sm" variant="tertiary">
-                  <Link href="/pricing" className="flex items-center">
-                    <CrownIcon className="w-4 h-4 mr-2" />
-                    Upgrade
-                  </Link>
-                </Button>
-                <UserControl />
+                {!hasProAccess && (
+                  <Button asChild size="sm" variant="tertiary">
+                    <Link href="/pricing" className="flex items-center">
+                      <CrownIcon className="w-4 h-4 mr-2" />
+                      {hasFreeAccess ? "Free!" : "Upgrade"}
+                    </Link>
+                  </Button>
+                )}
+                <UserControl hasProAccess={hasProAccess} />
               </div>
             </div>
             <TabsContent value="preview" className="flex-1 min-h-0">

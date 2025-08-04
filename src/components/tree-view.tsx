@@ -7,7 +7,6 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSubItem,
   SidebarProvider,
   SidebarRail,
 } from "./ui/sidebar";
@@ -98,7 +97,7 @@ const Tree = ({ item, selectedValue, onSelect, parentPath }: TreeProps) => {
         </CollapsibleTrigger>
 
         <CollapsibleContent>
-          <SidebarMenuSubItem className="ml-4 border-l border-gray-200 pl-2">
+          <ul className="ml-4 border-l border-gray-200 pl-2">
             {items.map((subItem, index) => (
               <Tree
                 key={index}
@@ -108,7 +107,7 @@ const Tree = ({ item, selectedValue, onSelect, parentPath }: TreeProps) => {
                 parentPath={currentPath}
               />
             ))}
-          </SidebarMenuSubItem>
+          </ul>
         </CollapsibleContent>
       </Collapsible>
     </SidebarMenuItem>

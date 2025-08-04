@@ -10,7 +10,7 @@ import {
   type Tool,
 } from "@inngest/agent-kit";
 import { PROMPT } from "./prompt";
-import { PrismaClient } from "@/generated/prisma";
+import { prisma } from "@/lib/db";
 
 interface AgenTState {
   summary: string;
@@ -167,7 +167,7 @@ export const codingAgentFunction = inngest.createFunction(
       Object.keys(result.state.data.files || {}).length===0
 
     await step.run("save-result", async () => {
-      const prisma = new PrismaClient();
+      
       if (isError) {
         return await prisma.message.create({
           data: {
