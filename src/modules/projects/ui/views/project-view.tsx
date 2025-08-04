@@ -50,7 +50,6 @@ export const ProjectView = ({ projectId }: ProjectViewProps) => {
         <ResizableHandle className="hover:bg-primary transition-colors" />
         <ResizablePanel defaultSize={65} minSize={50}>
           <Tabs
-            // Removed the 'gap-y-8' to fix the spacing issue
             className="h-full flex flex-col"
             defaultValue="preview"
             value={tabState}
@@ -74,7 +73,7 @@ export const ProjectView = ({ projectId }: ProjectViewProps) => {
                 </TabsTrigger>
               </TabsList>
               <div className="ml-auto flex items-center gap-x-2">
-                <Button asChild size="sm" variant="default">
+                <Button asChild size="sm" variant="tertiary">
                   <Link href="/pricing">
                     <CrownIcon className="w-4 h-4 mr-2" />
                     Upgrade
