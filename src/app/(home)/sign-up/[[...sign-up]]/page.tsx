@@ -3,6 +3,11 @@ import { useCurrentTheme } from "@/hooks/use-current-theme";
 import { SignUp } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 
+/**
+ * Renders the user sign-up page with a theme-aware appearance.
+ *
+ * Displays a centered sign-up form using the Clerk authentication library, applying a dark theme and custom card styling when the current UI theme is dark.
+ */
 export default function Page() {
   const currentTheme = useCurrentTheme();
     return (
