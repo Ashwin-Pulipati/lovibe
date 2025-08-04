@@ -23,7 +23,7 @@ export const MessagesContainer = ({
   const lastAssistantMessageIdRef = useRef<string | null>(null);
   const { data: messages } = useSuspenseQuery(
     trpc.messages.getMany.queryOptions(
-      { projectId }, { refetchInterval: 5000 })
+      { projectId }, { refetchInterval: 2000 })
   );
 
   console.log("Fetched messages:", messages);
