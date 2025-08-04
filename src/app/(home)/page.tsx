@@ -3,6 +3,11 @@ import { ProjectsList } from "@/modules/home/ui/components/projects-list";
 import Image from "next/image";
 
 
+/**
+ * Renders the main landing page layout with a logo, heading, description, project creation form, and a list of projects.
+ *
+ * Displays a vertically centered section introducing Lovibe, followed by a form for creating new projects and a list of existing projects.
+ */
 export default function Home() {
   return (
     <div className="flex flex-col max-w-5xl mx-auto w-full">
