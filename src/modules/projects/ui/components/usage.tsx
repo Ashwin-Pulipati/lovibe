@@ -4,6 +4,7 @@ import { useAuth } from "@clerk/nextjs";
 import { formatDuration, intervalToDuration } from "date-fns";
 import { CrownIcon } from "lucide-react";
 import Link from "next/link";
+import { useMemo } from "react";
 
 interface UsageProps {
   points: number;
@@ -16,13 +17,21 @@ export const Usage = ({ points, msBeforeNext }: UsageProps) => {
   // Let's log the value to see what it is
   console.log("msBeforeNext:", msBeforeNext);
 
-  const formattedDuration = formatDuration(
-    intervalToDuration({
-      start: new Date(),
-      end: new Date(Date.now() + msBeforeNext),
-    }),
-    { format: ["months", "days", "hours"] }
-  );
+  const resetTime = useMemo(() => {
+    try {
+      return formatDuration(
+        intervalToDuration({
+          start: new Date(),
+          end: new Date(Date.now() + msBeforeNext),
+        }),
+        { format: ["months", "days", "hours"] }
+      );
+    } catch (error) {
+      console.error("Error formatting duration: ", error);
+      return "Unknown";
+    }
+  }, [msBeforeNext]);
+  
 
   return (
     <div className="rounded-t-xl bg-background border border-b-0 p-2.5">
@@ -33,8 +42,7 @@ export const Usage = ({ points, msBeforeNext }: UsageProps) => {
           </p>
 
           <p className="text-xs text-muted-foreground">
-            Resets in {" "}
-            {formattedDuration || "less than an hour"}
+            Resets in {resetTime || "less than an hour"}
           </p>
         </div>
 
