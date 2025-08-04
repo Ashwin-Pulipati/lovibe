@@ -1,11 +1,25 @@
 import {Sandbox } from "@e2b/code-interpreter";
 import { AgentResult, type Message, TextMessage } from "@inngest/agent-kit";
 
+/**
+ * Establishes and returns a connection to a sandbox instance using the provided sandbox ID.
+ *
+ * @param sandboxId - The unique identifier of the sandbox to connect to
+ * @returns The connected sandbox instance
+ */
 export async function getSandbox(sandboxId: string) {
     const sandbox = await Sandbox.connect(sandboxId)
     return sandbox
 }
 
+/**
+ * Retrieves the content of the last assistant message from an agent result.
+ *
+ * If the assistant message content is an array of text chunks, their text fields are concatenated into a single string. Returns `undefined` if no assistant message or content is found.
+ *
+ * @param result - The agent result containing output messages
+ * @returns The content of the last assistant message as a string, or `undefined` if not found
+ */
 export function lastAssistantTextMessageContent(result: AgentResult) {
     const lastAssistantTextMessageIndex = result.output.findLastIndex(
         (message) => message.role === "assistant"
