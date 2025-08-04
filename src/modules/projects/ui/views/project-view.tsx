@@ -47,7 +47,7 @@ export const ProjectView = ({ projectId }: ProjectViewProps) => {
             </ErrorBoundary>
           </Suspense>
         </ResizablePanel>
-        <ResizableHandle withHandle />
+        <ResizableHandle className="hover:bg-primary transition-colors" />
         <ResizablePanel defaultSize={65} minSize={50}>
           <Tabs
             // Removed the 'gap-y-8' to fix the spacing issue
