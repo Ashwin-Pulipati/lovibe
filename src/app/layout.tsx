@@ -5,6 +5,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { TRPCReactProvider } from "@/trpc/client";
 import { ClerkProvider } from "@clerk/nextjs";
+import "ldrs/react/Bouncy.css";
 
 const quickSand = Quicksand({
   variable: "--font-quicksand",
