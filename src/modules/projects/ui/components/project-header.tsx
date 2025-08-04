@@ -12,7 +12,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-} from "@radix-ui/react-dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { ChevronDownIcon, ChevronLeftIcon, SunMoonIcon } from "lucide-react";
 import Image from "next/image";

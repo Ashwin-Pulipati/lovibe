@@ -27,9 +27,9 @@ export const ProjectsList = () => {
                         key={project.id}
                         variant="outline"
                         className="font-normal h-auto justify-start w-full text-start p-4"
-                    asChild
+                        asChild
                     >
-                        <Link href={`/project/${project.id}`}>
+                        <Link href={`/projects/${project.id}`}>
                             <div className="flex items-center gap-x-4">
                                 <Image
                                     src="/logo.png"
