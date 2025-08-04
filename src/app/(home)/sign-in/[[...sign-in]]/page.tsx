@@ -3,6 +3,11 @@ import { useCurrentTheme } from "@/hooks/use-current-theme";
 import { SignIn } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 
+/**
+ * Renders the sign-in page with a theme-aware, customized authentication form.
+ *
+ * The sign-in form adapts its appearance based on the current UI theme and applies custom styling to the authentication card.
+ */
 export default function Page() {
   const currentTheme = useCurrentTheme();
     return (
