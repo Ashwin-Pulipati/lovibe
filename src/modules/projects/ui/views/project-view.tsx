@@ -17,6 +17,7 @@ import { FileExplorer } from "@/components/file-explorer";
 import { UserControl } from "@/components/user-control";
 import { useAuth } from "@clerk/nextjs";
 import { ErrorBoundary } from "react-error-boundary";
+import { Bouncy } from "ldrs/react";
 
 interface ProjectViewProps {
   projectId: string;
@@ -37,13 +38,25 @@ const { has } = useAuth();
           className="flex flex-col min-h-0"
         >
           <ErrorBoundary fallback={<p>Project Header Error!</p>}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div className="flex justify-center items-center h-screen w-screen">
+                  <Bouncy size="45" speed="1.75" color="oklch(0.58 0.23 336)" />
+                </div>
+              }
+            >
               <ProjectHeader projectId={projectId} />
             </Suspense>
           </ErrorBoundary>
 
           <ErrorBoundary fallback={<p>Messages Container Error!</p>}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div className="flex justify-center items-center h-screen w-screen">
+                  <Bouncy size="45" speed="1.75" color="oklch(0.58 0.23 336)" />
+                </div>
+              }
+            >
               <MessagesContainer
                 projectId={projectId}
                 activeFragment={activeFragment}
