@@ -2,6 +2,12 @@ import {Sandbox } from "@e2b/code-interpreter";
 import { AgentResult, type Message, TextMessage } from "@inngest/agent-kit";
 import { SANDBOX_TIMEOUT } from "./types";
 
+/**
+ * Connects to a sandbox instance by its ID and sets a predefined timeout.
+ *
+ * @param sandboxId - The identifier of the sandbox to connect to
+ * @returns The connected and configured sandbox instance
+ */
 export async function getSandbox(sandboxId: string) {
     const sandbox = await Sandbox.connect(sandboxId)
     await sandbox.setTimeout(SANDBOX_TIMEOUT);
