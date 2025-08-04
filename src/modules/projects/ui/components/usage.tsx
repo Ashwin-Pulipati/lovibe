@@ -33,7 +33,7 @@ export const Usage = ({ points, msBeforeNext }: UsageProps) => {
           </p>
 
           <p className="text-xs text-muted-foreground">
-            Resets in
+            Resets in {" "}
             {formattedDuration || "less than an hour"}
           </p>
         </div>
