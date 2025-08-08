@@ -83,9 +83,16 @@ Make sure you have Node.js and npm installed on your machine.
     ```sh
     npx prisma migrate dev
     ```
-5.  **Run the development server:**
+5.  **Run the development applications:**
+    In three separate terminals, run the following commands to start the development server, Inngest, and Prisma Studio.
     ```sh
     npm run dev
+    ```
+    ```sh
+    npx inngest-cli dev
+    ```
+    ```sh
+    npx prisma studio
     ```
 6.  Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
