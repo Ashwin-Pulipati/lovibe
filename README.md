@@ -75,6 +75,9 @@ Make sure you have Node.js and npm installed on your machine.
 
     # E2B
     E2B_API_KEY=
+
+    # OpenAI
+    OPENAI_API_KEY =
     ```
 4.  **Run database migrations:**
     ```sh
