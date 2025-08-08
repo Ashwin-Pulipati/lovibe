@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/your-github-username/lovibe">
+  <a href="https://github.com/Ashwin-Pulipati/lovibe">
     <img src="public/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -7,11 +7,23 @@
 
   <p align="center">
     An intelligent, sandboxed environment for building, testing, and collaborating on code with the power of AI.
+    <br />
+    <a href="https://github.com/Ashwin-Pulipati/lovibe"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://lovibe.vercel.app/">View Demo</a>
+    ·
+    <a href="https://github.com/Ashwin-Pulipati/lovibe/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Ashwin-Pulipati/lovibe/issues">Request Feature</a>
+  </p>
 </div>
 
 ## About The Project
 
 Lovibe is a modern, full-stack application designed to provide a seamless and secure coding experience in the browser. It leverages secure, sandboxed environments to allow users to write, execute, and test code snippets or entire projects safely. With AI-powered code interpretation, user authentication, and a sleek, component-based UI, Lovibe is perfect for developers, students, and teams looking for a powerful and collaborative coding tool.
+
+![Application Screenshot](https://via.placeholder.com/800x400.png?text=Application+Screenshot)
 
 ### Built With
 
@@ -52,7 +64,7 @@ Make sure you have Node.js and npm installed on your machine.
 
 1.  **Clone the repository:**
     ```sh
-    git clone https://github.com/your-github-username/lovibe.git
+    git clone https://github.com/Ashwin-Pulipati/lovibe.git
     cd lovibe
     ```
 2.  **Install NPM packages:**
@@ -84,12 +96,9 @@ Make sure you have Node.js and npm installed on your machine.
 
 ## Usage
 
-Once the application is running, you can:
-- Sign up for a new account or log in.
-- Create a new project from your dashboard.
-- Write and edit code in the provided editor.
-- Run your code and see the output in the terminal view.
-- Explore project files using the integrated file explorer.
+Lovibe is designed to be intuitive. Here’s a typical user story:
+
+A developer signs in with their Google account, creates a new Python project, and writes a script to analyze a dataset using Pandas. They execute the script and see a Matplotlib chart rendered directly in the output. The AI assistant helps them refine the code, and they can share their project with a colleague for feedback.
 
 ## License
 
