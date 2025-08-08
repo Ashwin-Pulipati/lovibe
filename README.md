@@ -12,13 +12,13 @@
   </p>
 </div>
 
-## About The Project
+## 📝 About The Project
 
 Lovibe is a modern, full-stack application designed to provide a seamless and secure coding experience in the browser. It leverages secure, sandboxed environments to allow users to write, execute, and test code snippets or entire projects safely. With AI-powered code interpretation, user authentication, and a sleek, component-based UI, Lovibe is perfect for developers, students, and teams looking for a powerful and collaborative coding tool.
 
 ![Application Screenshot](https://via.placeholder.com/800x400.png?text=Application+Screenshot)
 
-### Built With
+## ⚙️ Built With
 
 This project is built with a modern tech stack that ensures scalability, type safety, and a great developer experience.
 
@@ -31,7 +31,7 @@ This project is built with a modern tech stack that ensures scalability, type sa
 *   **UI:** [Tailwind CSS](https://tailwindcss.com/) & [Shadcn/UI](https://ui.shadcn.com/)
 *   **Deployment:** [Vercel](https://vercel.com/)
 
-## Key Features
+## ✅ Key Features
 
 - **Secure Code Execution:** Run untrusted code in fully isolated, sandboxed environments powered by E2B.
 - **AI-Powered Assistance:** Integrated AI capabilities to help with code generation, debugging, and analysis.
@@ -40,7 +40,7 @@ This project is built with a modern tech stack that ensures scalability, type sa
 - **Interactive UI:** A rich, responsive interface with a file explorer, code editor, and results viewer.
 - **Real-time Feedback:** Get instant feedback and results from your code executions.
 
-## Getting Started
+## ▶️ Getting Started
 
 To get a local copy up and running, follow these simple steps.
 
@@ -86,13 +86,13 @@ Make sure you have Node.js and npm installed on your machine.
     ```
 6.  Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-## Usage
+## 🚀 Usage
 
 Lovibe is designed to be intuitive. Here’s a typical user story:
 
 A developer signs in with their Google account, creates a new Python project, and writes a script to analyze a dataset using Pandas. They execute the script and see a Matplotlib chart rendered directly in the output. The AI assistant helps them refine the code, and they can share their project with a colleague for feedback.
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -110,11 +110,11 @@ You can also report a bug or request a feature by opening an issue:
 - [Request Feature](https://github.com/Ashwin-Pulipati/lovibe/issues)
 
 
-## License
+## 📄 License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-## Contact
+## 📧 Contact
 
 Ashwin Pulipati - [LinkedIn](https://www.linkedin.com/in/ashwinpulipati/) - ashwinpulipati@gmail.com
 
