@@ -7,19 +7,9 @@
 
   <p align="center">
     An intelligent, sandboxed environment for building, testing, and collaborating on code with the power of AI.
-    <br />
-    <a href="https://github.com/your-github-username/lovibe"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/your-github-username/lovibe/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/your-github-username/lovibe/issues">Request Feature</a>
-  </p>
 </div>
 
 ## About The Project
-
-[![Lovibe Screenshot][product-screenshot]](public/lovibe%20snip.png)
 
 Lovibe is a modern, full-stack application designed to provide a seamless and secure coding experience in the browser. It leverages secure, sandboxed environments to allow users to write, execute, and test code snippets or entire projects safely. With AI-powered code interpretation, user authentication, and a sleek, component-based UI, Lovibe is perfect for developers, students, and teams looking for a powerful and collaborative coding tool.
 
@@ -107,9 +97,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
+Ashwin Pulipati - [LinkedIn](https://www.linkedin.com/in/ashwinpulipati/) - ashwinpulipati@gmail.com
 
-Project Link: [https://github.com/your-github-username/lovibe](https://github.com/your-github-username/lovibe)
-
-
-[product-screenshot]: public/lovibe%20snip.png
+Project Link: [https://github.com/Ashwin-Pulipati/lovibe](https://github.com/Ashwin-Pulipati/lovibe)
