@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <a href="https://github.com/your-github-username/lovibe">
+    <img src="public/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Lovibe</h3>
+
+  <p align="center">
+    An intelligent, sandboxed environment for building, testing, and collaborating on code with the power of AI.
+    <br />
+    <a href="https://github.com/your-github-username/lovibe"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/your-github-username/lovibe/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/your-github-username/lovibe/issues">Request Feature</a>
+  </p>
+</div>
+
+## About The Project
+
+[![Lovibe Screenshot][product-screenshot]](public/lovibe%20snip.png)
+
+Lovibe is a modern, full-stack application designed to provide a seamless and secure coding experience in the browser. It leverages secure, sandboxed environments to allow users to write, execute, and test code snippets or entire projects safely. With AI-powered code interpretation, user authentication, and a sleek, component-based UI, Lovibe is perfect for developers, students, and teams looking for a powerful and collaborative coding tool.
+
+### Built With
+
+This project is built with a modern tech stack that ensures scalability, type safety, and a great developer experience.
+
+*   **Framework:** [Next.js](https://nextjs.org/)
+*   **Backend & API:** [tRPC](https://trpc.io/)
+*   **Database ORM:** [Prisma](https://www.prisma.io/)
+*   **Authentication:** [Clerk](https://clerk.com/)
+*   **Code Sandboxing:** [E2B Code Interpreter](https://e2b.dev/)
+*   **Background Jobs:** [Inngest](https://www.inngest.com/)
+*   **UI:** [Tailwind CSS](https://tailwindcss.com/) & [Shadcn/UI](https://ui.shadcn.com/)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Deployment:** [Vercel](https://vercel.com/)
+
+## Key Features
+
+- **Secure Code Execution:** Run untrusted code in fully isolated, sandboxed environments powered by E2B.
+- **AI-Powered Assistance:** Integrated AI capabilities to help with code generation, debugging, and analysis.
+- **Project Management:** Create, manage, and organize your coding projects.
+- **User Authentication:** Secure sign-up and sign-in functionality with Clerk.
+- **Interactive UI:** A rich, responsive interface with a file explorer, code editor, and results viewer.
+- **Real-time Feedback:** Get instant feedback and results from your code executions.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running, follow these simple steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Make sure you have Node.js and npm installed on your machine.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/your-github-username/lovibe.git
+    cd lovibe
+    ```
+2.  **Install NPM packages:**
+    ```sh
+    npm install
+    ```
+3.  **Set up your environment variables:**
+    Create a `.env.local` file in the root of your project and add the necessary environment variables. You will need keys for Clerk, Prisma (your database connection string), and E2B.
+    ```env
+    # Clerk
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+    CLERK_SECRET_KEY=
 
-## Learn More
+    # Database (Example for PostgreSQL)
+    DATABASE_URL="postgresql://USER:PASSWORD@HOST:PORT/DATABASE"
 
-To learn more about Next.js, take a look at the following resources:
+    # E2B
+    E2B_API_KEY=
+    ```
+4.  **Run database migrations:**
+    ```sh
+    npx prisma migrate dev
+    ```
+5.  **Run the development server:**
+    ```sh
+    npm run dev
+    ```
+6.  Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Once the application is running, you can:
+- Sign up for a new account or log in.
+- Create a new project from your dashboard.
+- Write and edit code in the provided editor.
+- Run your code and see the output in the terminal view.
+- Explore project files using the integrated file explorer.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact
+
+Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
+
+Project Link: [https://github.com/your-github-username/lovibe](https://github.com/your-github-username/lovibe)
+
+
+[product-screenshot]: public/lovibe%20snip.png
