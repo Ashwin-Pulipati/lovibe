@@ -8,14 +8,7 @@
   <p align="center">
     An intelligent, sandboxed environment for building, testing, and collaborating on code with the power of AI.
     <br />
-    <a href="https://github.com/Ashwin-Pulipati/lovibe"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://lovibe.vercel.app/">View Demo</a>
-    ·
-    <a href="https://github.com/Ashwin-Pulipati/lovibe/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Ashwin-Pulipati/lovibe/issues">Request Feature</a>
+    <a href="https://lovibe.vercel.app/"><strong>View Demo »</strong></a>
   </p>
 </div>
 
@@ -36,7 +29,6 @@ This project is built with a modern tech stack that ensures scalability, type sa
 *   **Code Sandboxing:** [E2B Code Interpreter](https://e2b.dev/)
 *   **Background Jobs:** [Inngest](https://www.inngest.com/)
 *   **UI:** [Tailwind CSS](https://tailwindcss.com/) & [Shadcn/UI](https://ui.shadcn.com/)
-*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 *   **Deployment:** [Vercel](https://vercel.com/)
 
 ## Key Features
@@ -99,6 +91,24 @@ Make sure you have Node.js and npm installed on your machine.
 Lovibe is designed to be intuitive. Here’s a typical user story:
 
 A developer signs in with their Google account, creates a new Python project, and writes a script to analyze a dataset using Pandas. They execute the script and see a Matplotlib chart rendered directly in the output. The AI assistant helps them refine the code, and they can share their project with a colleague for feedback.
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+You can also report a bug or request a feature by opening an issue:
+- [Report Bug](https://github.com/Ashwin-Pulipati/lovibe/issues)
+- [Request Feature](https://github.com/Ashwin-Pulipati/lovibe/issues)
+
 
 ## License
 
