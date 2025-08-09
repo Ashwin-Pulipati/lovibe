@@ -17,7 +17,9 @@
 Lovibe is a modern, full-stack application designed to provide a seamless and secure coding experience in the browser. It leverages secure, sandboxed environments to allow users to write, execute, and test code snippets or entire projects safely. With AI-powered code interpretation, user authentication, and a sleek, component-based UI, Lovibe is perfect for developers, students, and teams looking for a powerful and collaborative coding tool.
 
 
-https://github.com/user-attachments/assets/3dd0c6a6-8828-4ea2-b905-51139c067428
+
+https://github.com/user-attachments/assets/801a56c8-bbec-4d4c-bca7-ee9d865bea6a
+
 
 
 ## ⚙️ Built With
