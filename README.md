@@ -29,6 +29,7 @@ This project is built with a modern tech stack that ensures scalability, type sa
 *   **Framework:** [Next.js](https://nextjs.org/)
 *   **Backend & API:** [tRPC](https://trpc.io/)
 *   **Database ORM:** [Prisma](https://www.prisma.io/)
+*   **AI Integration:** [OpenAI API](https://platform.openai.com/)
 *   **Authentication:** [Clerk](https://clerk.com/)
 *   **Code Sandboxing:** [E2B Code Interpreter](https://e2b.dev/)
 *   **Background Jobs:** [Inngest](https://www.inngest.com/)
