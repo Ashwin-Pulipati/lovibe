@@ -36,6 +36,15 @@ This project is built with a modern tech stack that ensures scalability, type sa
 *   **UI:** [Tailwind CSS](https://tailwindcss.com/) & [Shadcn/UI](https://ui.shadcn.com/)
 *   **Deployment:** [Vercel](https://vercel.com/)
 
+## ✅ Key Features
+
+- **Secure Code Execution:** Run untrusted code in fully isolated, sandboxed environments powered by E2B.
+- **AI-Powered Assistance:** Integrated AI capabilities to help with code generation, debugging, and analysis.
+- **Project Management:** Create, manage, and organize your coding projects.
+- **User Authentication:** Secure sign-up and sign-in functionality with Clerk.
+- **Interactive UI:** A rich, responsive interface with a file explorer, code editor, and results viewer.
+- **Real-time Feedback:** Get instant feedback and results from your code executions.
+
 ## 🏗️ System Architecture
 
 <div align="center">
@@ -61,15 +70,6 @@ Lovibe AI is built with a focus on type-safety, security, and reliable AI orches
 ### 4. Data & Infrastructure (Prisma & PostgreSQL)
 - **ORM:** Prisma is used for schema management and type-safe database queries.
 - **Persistence:** A PostgreSQL database stores user profiles, credit balances, and historical project metadata.
-
-## ✅ Key Features
-
-- **Secure Code Execution:** Run untrusted code in fully isolated, sandboxed environments powered by E2B.
-- **AI-Powered Assistance:** Integrated AI capabilities to help with code generation, debugging, and analysis.
-- **Project Management:** Create, manage, and organize your coding projects.
-- **User Authentication:** Secure sign-up and sign-in functionality with Clerk.
-- **Interactive UI:** A rich, responsive interface with a file explorer, code editor, and results viewer.
-- **Real-time Feedback:** Get instant feedback and results from your code executions.
 
 ## ▶️ Getting Started
 
