@@ -36,6 +36,27 @@ This project is built with a modern tech stack that ensures scalability, type sa
 *   **UI:** [Tailwind CSS](https://tailwindcss.com/) & [Shadcn/UI](https://ui.shadcn.com/)
 *   **Deployment:** [Vercel](https://vercel.com/)
 
+## 🏗️ System Architecture
+
+Lovibe AI is built with a focus on type-safety, security, and reliable AI orchestration. The system is divided into four distinct layers:
+
+### 1. Application Layer (Next.js & tRPC)
+- **Frontend:** Built with React and Tailwind CSS, utilizing a component-based architecture for a highly responsive user experience.
+- **API Communication:** Leverages tRPC to provide end-to-end type safety between the client and the server, eliminating runtime API errors and improving developer velocity.
+- **Authentication:** Managed by Clerk, providing secure session management and tiered user access.
+
+### 2. Orchestration & AI Layer (Inngest & GPT-4)
+- **Event-Driven Workflows:** Uses Inngest to handle complex, multi-step background processes. This ensures that long-running AI generation tasks are resilient to timeouts and can be retried automatically if a step fails.
+- **AI Agent:** Interfaces with OpenAI’s GPT-4 to interpret natural language prompts and transform them into functional, production-ready code.
+
+### 3. Secure Runtime (E2B Sandboxing)
+- **Code Execution:** Security is paramount when executing AI-generated code. Lovibe utilizes E2B (Docker-based sandboxes) to provide an isolated environment where code is written, installed, and executed without ever touching the host server.
+- **Streaming:** Logs and outputs are streamed back to the user in real-time, providing immediate feedback on the app’s deployment status.
+
+### 4. Data & Infrastructure (Prisma & PostgreSQL)
+- **ORM:** Prisma is used for schema management and type-safe database queries.
+- **Persistence:** A PostgreSQL database stores user profiles, credit balances, and historical project metadata.
+
 ## ✅ Key Features
 
 - **Secure Code Execution:** Run untrusted code in fully isolated, sandboxed environments powered by E2B.
