@@ -38,6 +38,9 @@ This project is built with a modern tech stack that ensures scalability, type sa
 
 ## 🏗️ System Architecture
 
+<img width="2707" height="1313" alt="Lovibe Architecture" src="https://github.com/user-attachments/assets/d9858b4b-44bf-4af4-9a41-009e48ff27db" />
+
+
 Lovibe AI is built with a focus on type-safety, security, and reliable AI orchestration. The system is divided into four distinct layers:
 
 ### 1. Application Layer (Next.js & tRPC)
